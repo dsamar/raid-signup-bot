@@ -120,7 +120,7 @@ function handleMessage(message) {
     return lock.acquire(commandLocks, runCommand).then(() => {
       logger.log("info", "release: " + commandLocks);
     }).then(() => {
-      if (command.locks.includes("dkp")) {
+      if (command.locks.includes("attendance")) {
         leveldb.refresh(message.guild);
       }
     });
