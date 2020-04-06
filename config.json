@@ -1,0 +1,13 @@
+{
+  "botCategory": "raid",
+  "commandChannel": "raid-signup",
+  "raidAnnounceChannel": "raid-signup",
+  "leaderboardName": "raid-attendance",
+  "officerRole": "officer",
+  "reactionTagName": "internal-tag",
+  "prefix": "!",
+  "raidTemplate": {
+    "title": "Raid Signup",
+    "description": "Please mark attendance below with the reactions corresponding to your class."
+  }
+}
