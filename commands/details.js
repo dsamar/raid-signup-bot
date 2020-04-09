@@ -21,9 +21,7 @@ module.exports = {
   locks: ["raiddetails"],
   execute(message, args) {
     // Check the raid announce channel.
-    const channel = message.guild.channels.find(
-      ch => ch.name === config.raidAnnounceChannel
-    );
+    const channel = message.channel;
     return channel.fetchMessage(args[0]).then(fetched => {
       const raidMessage = fetched.embeds[0];
       const newEmbed = new Discord.RichEmbed(raidMessage);

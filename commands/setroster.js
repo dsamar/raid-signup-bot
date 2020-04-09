@@ -1,6 +1,5 @@
 const raid = require('../util/raid.js')
 const dkp = require('../util/dkp.js')
-const {raidAnnounceChannel} = require('../config.json');
 const sanitize = require('../util/sanitize.js');
 
 module.exports = {
@@ -15,7 +14,7 @@ module.exports = {
     // args[0] == raid ID
     // args[1-n] = player names
     let num_players = args.length - 1
-    const channel = message.guild.channels.find(ch => ch.name === raidAnnounceChannel);
+    const channel = message.channel;
     return channel.fetchMessage(args[0])
       .then(message => {
         // Make everyone a warrior, we don't really care here.

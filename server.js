@@ -2,7 +2,6 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const {
   prefix,
-  commandChannel,
   raidAnnounceChannel,
   leaderboardName,
   botCategory,

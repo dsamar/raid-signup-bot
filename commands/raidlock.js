@@ -21,7 +21,7 @@ module.exports = {
   locks: ['raid'],
 	execute(message, args) {
     // Check the raid announce channel.
-    const channel = message.guild.channels.find(ch => ch.name === config.raidAnnounceChannel);
+    const channel = message.channel;
     return channel.fetchMessage(args[0])
       .then(fetched => {
         return fetched.clearReactions().then(() => {

@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const {
-  raidAnnounceChannel,
   reactionTagName,
   raidTemplate
 } = require("../config.json");
