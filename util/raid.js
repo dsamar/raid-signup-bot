@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const {reactionTagName, raidAnnounceChannel} = require('../config.json');
+const {reactionTagName} = require('../config.json');
 const sanitize = require('./sanitize.js');
 const leveldb = require('./leveldb.js');
 const CLASS_LIST = ["warrior", "mage", "hunter", "warlock", "rogue", "druid", "shaman", "paladin", "priest"];
@@ -126,9 +126,9 @@ module.exports = {
     totalPlayers.value = signups.length;
     return Promise.all([message.edit("", newEmbed), databaseUpdate]);
   },
-  clearCurrentRaids: function(guild) {
+  clearCurrentRaids: function(message, guild) {
     // Returns a promise that finished when all messages are unpinned.
-    const channel = guild.channels.find(ch => ch.name === raidAnnounceChannel);
+    const channel = message.channel;
     return channel.fetchPinnedMessages()
       .then(messages => {
         return Promise.all(messages.map(message => {

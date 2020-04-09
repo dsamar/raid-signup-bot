@@ -1,6 +1,5 @@
 const raid = require('../util/raid.js')
 const dkp = require('../util/dkp.js')
-const {raidAnnounceChannel} = require('../config.json');
 const sanitize = require('../util/sanitize.js');
 
 module.exports = {
@@ -13,8 +12,8 @@ module.exports = {
   locks: ['attendance', 'raid'],
 	execute(message, args) {
     // args[0] == raid ID
-    return raid.clearCurrentRaids(message.channel.guild).then(() => {
-      const channel = message.guild.channels.find(ch => ch.name === raidAnnounceChannel);
+    return raid.clearCurrentRaids(message, message.channel.guild).then(() => {
+      const channel = message.channel;
       return channel.fetchMessage(args[0]).then(fetched => {
         return raid.getRoster(fetched).then((roster) => {
           // Set field on raid that shows this raid is was already started

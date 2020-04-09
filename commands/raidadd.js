@@ -17,7 +17,7 @@ module.exports = {
     if (args.length < 3) {
       throw new Error("this function takes three arguments");
     }
-    const channel = message.guild.channels.find(ch => ch.name === config.raidAnnounceChannel);
+    const channel = message.channel;
     return channel.fetchMessage(args[0])
       .then(message => {
         return raid.update(args[2], message, [sanitize.name(args[1])]);
