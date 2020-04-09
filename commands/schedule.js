@@ -29,7 +29,7 @@ module.exports = {
 	execute(message, args) {
     // args[0] date-time
     const userInput = args.join(" ");
-		const channel = message.guild.channels.find(ch => ch.name === raidAnnounceChannel);
+		const channel = message.channel;
     const content = new Discord.RichEmbed();
     content.setTitle(raidTemplate.title);
     content.setDescription(raidTemplate.description);

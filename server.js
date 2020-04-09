@@ -133,7 +133,6 @@ client.on("message", message => {
   if (message.type === "PINS_ADD") {
     return message.delete();
   }
-  if (message.channel.name !== commandChannel) return;
   if (message.author.bot) return;
 
   message.channel.startTyping();
