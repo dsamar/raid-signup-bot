@@ -1,9 +1,8 @@
 **DKP Discord Bot**
 
 Three channels need to be set up for the bot to work:
-- `raid-signup` for displaying raid signup panels.
-- `raid-attendance` for raid attendance display.
-- the `raid` category for the above two channels.
+- the `raid` category for channels that will be used for messaging.
+- `raid-attendance` channel for raid attendance display.
 
 Server role required:
 - `officer` for member that can send dkp management commands to bot.
@@ -46,7 +45,7 @@ Linux Setup:
 
 ```
 git clone https://github.com/dsamar/raid-signup-bot.git
-cd raid-bot
+cd raid-signup-bot
 npm install
 vim .env
   > BOT_TOKEN=<TOKEN>
@@ -54,13 +53,13 @@ vim .env
 sudo npm install -g forever
 forever start server.js
 crontab -u <USERNAME> -e
-  > @reboot /usr/local/bin/forever start /home/<USERNAME>/raid-bot/server.js
+  > @reboot /usr/local/bin/forever start /home/<USERNAME>/raid-signup-bot/server.js
 ```
 
 Update Commands:
 
 ```
-cd raid-bot
+cd raid-signup-bot
 git reset --hard
 git pull --rebase origin master
 forever restartall
