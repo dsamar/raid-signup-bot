@@ -15,7 +15,7 @@ module.exports = {
     if (args.length < 1) {
       throw new Error("!remove takes a username argument.");
     }
-    const username = sanitize.name(args[0]);
+    const username = sanitize.name(args.join(" "));
     return dkp.dkpRemove(message.guild, username).then(() => {
       return message.author.send(username + " was removed from the leaderboard");
     });
